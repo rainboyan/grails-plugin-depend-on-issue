@@ -1,9 +1,12 @@
 package org.grails.demos
 
+import grails.util.GrailsUtil
 import grails.plugins.*
 
 class GrailsPluginDependOnIssueGrailsPlugin extends Plugin {
 
+    def version = GrailsUtil.getGrailsVersion()//'0.1'
+    def dependsOn = [core: version, domainClass: version, services: version]
     // the version or versions of Grails the plugin is designed for
     def grailsVersion = "5.1.7 > *"
     // resources that are excluded from plugin packaging
